@@ -12,4 +12,14 @@ export class StudentController {
   async getScoreBySbd(@Param() params: GetStudentScoreDto): Promise<Student> {
     return this.studentService.getScoreBySbd(params.sbd);
   }
+
+  @Get('report/levels')
+  async getScoreLevelsReport() {
+    return this.studentService.getScoreLevelsReport();
+  }
+
+  @Get('report/topScores')
+  async getTopGroupAStudents() {
+    return this.studentService.getTopGroupAStudents();
+  }
 }
