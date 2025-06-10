@@ -7,8 +7,11 @@ import { env } from './config/environment';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'http://localhost:5173', // Cho phép truy cập từ frontend Vite
-    credentials: true, // Nếu bạn cần gửi cookie / header
+    origin: [
+      'http://localhost:5173',
+      'https://g-scores-fe.vercel.app'
+    ], // Cho phép truy cập từ frontend Vite
+    credentials: true,
   });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT || env.APP_PORT || 3000, () => {
