@@ -57,18 +57,22 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
+## Deployment Backend to Railway
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Deployment Steps:
+Go to https://railway.app and sign in with your GitHub account.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Click New Project → Deploy from GitHub repo and select your NestJS backend repository.
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+Set the build and start commands:
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Build Command: npm install
+
+Start Command: npm run start:prod
+
+Go to the Variables tab and set your environment variables (for example: MONGODB_URI, PORT, etc.).
+
+Railway will automatically detect your app and deploy it.
 
 ## Resources
 
